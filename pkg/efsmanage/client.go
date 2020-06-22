@@ -407,8 +407,14 @@ func discoverPrint() {
 	efssvc := getEFS(sess)
 	currentState := getFileSystems(efssvc)
 	for _, fs := range currentState {
-		for _, ap := range fs.accessPoints {
-			fmt.Printf("%s:%s\n", fs.fileSystemID, ap)
+		fmt.Printf("%s:", fs.fileSystemID)
+		if len(fs.accessPoints) == 0 {
+			fmt.Print(" []\n")
+		} else {
+			fmt.Print("\n")
+			for _, ap := range fs.accessPoints {
+				fmt.Printf("  - %s\n", ap)
+			}
 		}
 	}
 }
