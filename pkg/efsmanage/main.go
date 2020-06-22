@@ -47,9 +47,14 @@ have two access points; the third will have none.`)
 		"discover",
 		false,
 		`Discover and print file system and access point pairs, one per line, e.g.
-    fs-a99c122a:fsap-099537fb4bb7d50ea
-    fs-b89c123b:fsap-04e855ae78fe51eed
-    fs-b89c123b:fsap-0b02dc545c4f9b076`)
+
+    fs-95611e16: []
+    fs-94611e17:
+      - fsap-0c653ba4711f0d167
+      - fsap-0fef2eff6c96ac5c8
+    fs-96611e15:
+      - fsap-0f1a063e6ebac6db6
+`)
 
 	flag.Parse()
 
